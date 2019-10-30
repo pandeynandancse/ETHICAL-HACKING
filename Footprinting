@@ -38,4 +38,17 @@ email footprintin g
 nikto -e 1 -h www.nitkkr.ac.in
 
 
+theharvester -d microsoft.com -l 50 -b google -h myresults.html
+
+
+shodan.io --> search for cisco router in some country and its city.    --->  find username and password that is default    --->summary it finds vulnerable devices.
+
+
+google hacking database    --- inurl, intitle , site: , filetype
+
+
+
+
+
+
 
