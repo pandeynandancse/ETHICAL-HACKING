@@ -1,0 +1,102 @@
+                                  Scanning Methodology -
+check for live systems
+check for open ports
+san beyond ids
+perform banner grabbing
+scan for vulnerabilities
+draw network diagrams
+prepare proxies
+
+
+
+
+
+
+Note : packet fragmentation can help against target  ------ to avoid ids use pkt. fragmentation
+
+
+
+
+
+
+
+
+3way handshake -
+syn100
+syn200 + ack101
+ack201
+
+
+
+TCP header flags - 
+syn
+ack
+rst   ----->> close communicaation in both direction
+finish   --- fin  ---->> ordered close communication 
+push   -- psh   --->>forces delivery of data without concern for any buffering
+urgent -- urg  --->>> indiactes the data is being sent out of band
+
+
+
+
+
+icmp msg type3 :
+0  -- dest network unreachable
+1  --- dest host unreach
+6  -- n/w unknown
+7  -- host unknown
+9   --- n/w administratively prohibitted
+10   --  host adm proh
+13  --communication admin prohib
+
+
+
+
+
+
+port scanninng -
+tools -nmap
+full open -->> aka tcp connect and full connect .it runs 3 way hanashake on all ports. Easy to detect. 
+half open  (stealth or syn )  -->> no completion of thrree way handshake 
+inverse tcp  -->.uses fin , psh, urg flags.No response means port is open
+xmas  -->> 
+ack    --->> ack packet sent and header is reviewed for rst packet to see if ttl is less than 64 that could us that port is open.
+idle  -- spoofed ip addressss
+
+
+
+
+
+
+banner grabbing - 
+telnet -- runs on port 23 but run on http port i.e.80   -->  $ telnet ip_address 80
+
+
+
+source routing
+
+
+
+
+
+
+Enumeration -
+discovery of hosts or devices
+
+
+
+
+
+
+
+vulnerability tools- 
+openvas
+nessus
+1) cvss
+2) cve
+3) vulnerability management life cycle
+
+
+
+
+
