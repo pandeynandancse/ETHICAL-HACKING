@@ -1,1 +1,5 @@
+scanme.nmap.org   ///// for legal scanning
+major ip block    ///// nirsoft website  //// ip addresses in country 
 
+1) nslookup scanme.nmap.org >> results.txt
+2) 
