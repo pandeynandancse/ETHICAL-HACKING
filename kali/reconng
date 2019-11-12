@@ -1,0 +1,35 @@
+osint    --- open source intelligence
+
+recon-ng
+marketplace install all   //// if module is not installed
+marketplace install hackertarget
+marketpalce install
+modules load hackertarget
+modules load interesting_files  /////// new version of    use interesting_files
+info                    ///////   gives information of loaded module
+
+
+
+
+workspaces -h      /////// outputs <ccreate/delete/list/slelect>
+workspaces create ws1
+workspaces delete ws1
+workspaces list
+
+
+
+db insert domains domainname
+db show domains
+show domains
+
+
+db insert companies
+db show companies
+show companies
+
+
+
+
+keys add shodan gmsfek;fapodwq39q9((((@3     //// add api keys
+keys --help
+keys list
