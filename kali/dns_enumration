@@ -29,3 +29,18 @@ Gathering information about mail server with priority and ip  address etc things
 10) dig nitkkr.ac.in -t mx +short
  
  11) dig engigyan.com CNAME +short
+
+
+
+
+
+12) host -t ns zonetransfer.me
+    host -l zonetransfer.me nsztm1.digi.ninja.
+    dig zonetransfer.me -t ns
+    dig axfr zonetransfer.me @nsztm1.digi.ninja.
+    
+    
+    
+    
+    
+ 13)  dnsrecon -d zonetransfer.me -t axfr   ====>>>> automates whole above process..
