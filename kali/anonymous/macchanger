@@ -1,0 +1,7 @@
+macchanger --show
+
+macchanger --help
+
+macchanger -s wlan0
+
+macchanger -a wlan0
