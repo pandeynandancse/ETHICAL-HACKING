@@ -25,3 +25,164 @@ d) graphical    ===   -oG
 e) aggresive   ====  -A
 f) fast   ===    -F
 g) for only open port ==== --open
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+REFERENCE  :::    https://www.linkedin.com/pulse/20140930164834-1571978-syn-stealth-xmas-null-idle-fin
+
+1)
+
+SYN or Stealth scan          SYN IS SEND                                                IF OPEN SYN/ACK IS RECVD        IF CLOSE THEN RST RCVD.
+XMAS SCAN                    send a packet with the FIN, URG, and PSH flags set         IF OPEN THEN NO RESPONSE        IF CLOSE RST/ACK RECVD.
+----->>> XMAS scans work only on target systems that follow the RFC 793 implementation of TCP/IP and don’t work against any version of Windows.
+
+
+fin SACN'                    ONLY FIN PACKET IS SENT                                    SAME AS XMAS                      SAME AS XMAS
+NULL SCAN
+IDLE SCAN
+
+-->filtered port ===>>> This state means that a firewall, filter, or other network obstacle is blocking the port so that Nmap cannot tell whether it is open or closed. 
+--->> Unfiltered  ====>>>  ports are classified as unfiltered when they are responsive to Nmap’s probes, but Nmap cannot determine whether they are open or closed.
+
+
+
+
+
+
+
+
+
+
+
+2)
+
+IPEye   -->> TCP port scanner ---- does SYN,FIN,NULL and XMAS SCAN. -- CMD TOOL --- TARGET MAY BE OPEN, CLOSED, REJECT,DROP.
+                 Closed means there is a computer on the other end, but it doesn’t listen at the port. 
+                 Reject means a firewall is rejecting the connection to the port (sending a reset back). 
+                 Drop means a firewall is dropping everything to the port, or there is no computer on the other end.
+                 Open means some kind of service is listening at the port. 
+                 These responses help a hacker identify what type of system is responding.
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+  
+  3) 
+  
+  NetScan Tools Pro, hping2, KingPingicmpenum, and SNMP Scanner are all scanning tools and can also be used to fingerprint the operating system (discussed later).
+
+Icmpenum uses not only ICMP Echo packets to probe networks, but also ICMP Timestamp and ICMP Information packets. Furthermore, it supports spoofing and sniffing for reply packets. Icmpenum is great for scanning networks when the firewall blocks ICMP Echo packets but fails to block Timestamp or Information packets.
+
+The hping2 tool is notable because it contains a host of other features besides OS fingerprinting such as TCP, User Datagram Protocol (UDP), ICMP, and raw-IP ping protocols, traceroute mode, and the ability to send files between the source and target system.
+
+SNMP Scanner allows you to scan a range or list of hosts performing ping, DNS, and Simple Network Management Protocol (SNMP) queries.
+
+
+
+
+
+
+
+
+
+                    https://www.geeksforgeeks.org/internet-control-message-protocol-icmp/
+
+
+4) ICMP has been used to execute denial-of-service attacks (also called the ping of death) by sending an IP packet larger
+than the number of bytes allowed by the IP protocol.
+
+Since IP does not have a inbuilt mechanism for sending error and control messages.
+It depends on Internet Control Message Protocol(ICMP) to provide an error control.
+It is used for reporting errors and management queries. 
+It is a supporting protocol and used by networks devices like routers for sending the error messages and operations information.
+
+
+
+Different ICMP messages :
+a) Source quench message      by router/destination       to source     to control congestion 
+b)parameter problem           by router                   to soure      occurs when pkt's calculate header checksum != recvd header checksum
+c)time exceed message         by router                  to source      occurs when ttl==0
+d) ICMP echo reply           by dest                     to soure       when pkt is reached to dest
+e) destination unreachable    by dest or router both      to source     occurs when link failure ,hardware failure or port failure occurs in network.
+f) redirection msg                                       to source       to change route of packet transmission.
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+
+Think of it as the language spoken between computers to help them communicate more efficiently.
+Protocol HTTP for example defines the format for communication between internet browsers and web sites.
+Another example is the IMAP protocol that defines the communication between IMAP email servers and clients or finally,
+the SSL protocol which states the format to use for encrypted communications.
+
+
+
+1) HTTP  on port == tcp 80
+2) HTTPS   === tcp 443
+
+
+TCP port 443 is the standard TCP port that is used for website which use SSL.
+When you go to a website which uses the https at the beginning you are connecting to port 443.
+--------------------------------------------------------------------
+
+
+Post Office Protocol version 3 (POP3) is a standard mail protocol used to receive emails from a remote server to a local email client. POP3 allows you to download email messages on your local computer and read them even when you are offline. Note, that when you use POP3 to connect to your email account, messages are downloaded locally and removed from the email server. This means that if you access your account from multiple locations, that may not be the best option for you. On the other hand, if you use POP3, your messages are stored on your local computer, which reduces the space your email account uses on your web server.
+By default, the POP3 protocol works on two ports:
+Port 110 - this is the default POP3 non-encrypted port
+Port 995 - this is the port you need to use if you want to connect using POP3 securely
+
+
+
+
+
+
+
+
+
+The Internet Message Access Protocol (IMAP) is a mail protocol used for accessing email on a remote web server from a local client. IMAP and POP3 are the two most commonly used Internet mail protocols for retrieving emails. Both protocols are supported by all modern email clients and web servers.
+While the POP3 protocol assumes that your email is being accessed only from one application, IMAP allows simultaneous access by multiple clients. This is why IMAP is more suitable for you if you're going to access your email from different locations or if your messages are managed by multiple users.
+By default, the IMAP protocol works on two ports:
+Port 143 - this is the default IMAP non-encrypted port
+Port 993 - this is the port you need to use if you want to connect using IMAP securely
+
+
+
+
+
+
+
+
+Simple Mail Transfer Protocol (SMTP) is the standard protocol for sending emails across the Internet.
+By default, the SMTP protocol works on three ports:
+Port 25 - this is the default SMTP non-encrypted port
+Port 2525 - this port is opened on all SiteGround servers in case port 25 is filtered (by your ISP for example) and you want to send non-encrypted emails with SMTP
+Port 465 - this is the port used if you want to send messages using SMTP securely
+
+
+
+
+
+
+
+------------------------------------------------
+
+
